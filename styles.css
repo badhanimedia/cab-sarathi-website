@@ -242,7 +242,7 @@ section { padding: 88px 0; }
 }
 .tab[aria-selected="true"] { background: var(--ink); color: #fff; }
 
-.hiw { display: grid; grid-template-columns: 1fr 340px; gap: 64px; align-items: center; max-width: 980px; margin: 0 auto; }
+.hiw { display: grid; grid-template-columns: 1fr 290px; gap: 64px; align-items: center; max-width: 980px; margin: 0 auto; }
 .hiw[hidden] { display: none; }
 .hiw-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; counter-reset: step; }
 .hiw-step {
@@ -264,11 +264,11 @@ section { padding: 88px 0; }
 .hiw-step:focus-visible { outline: 3px solid var(--brand); outline-offset: 2px; }
 
 .device {
-  position: relative; width: 100%; max-width: 320px; margin: 0 auto; aspect-ratio: 9 / 19;
-  border-radius: 44px; padding: 10px; background: var(--ink);
+  position: relative; width: 100%; max-width: 270px; margin: 0 auto; aspect-ratio: 9 / 19;
+  border-radius: 38px; padding: 9px; background: var(--ink);
   box-shadow: 0 30px 60px rgba(17,19,24,.18), 0 0 0 1px rgba(17,19,24,.06);
 }
-.device-screen { position: relative; width: 100%; height: 100%; border-radius: 34px; overflow: hidden; background: var(--bg); }
+.device-screen { position: relative; width: 100%; height: 100%; border-radius: 30px; overflow: hidden; background: var(--bg); }
 .device-screen img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; transition: opacity .35s; }
 .device-screen img.is-fading { opacity: 0; }
 .hiw-hl {
@@ -287,8 +287,8 @@ section { padding: 88px 0; }
 @media (max-width: 900px) {
   .hiw { grid-template-columns: 1fr; gap: 32px; }
   .hiw-media { order: -1; }
-  .device { max-width: 270px; border-radius: 38px; }
-  .device-screen { border-radius: 29px; }
+  .device { max-width: 230px; border-radius: 34px; padding: 8px; }
+  .device-screen { border-radius: 27px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .hiw-hl, .device-screen img { transition: none; }
