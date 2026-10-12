@@ -1,7 +1,3 @@
-/* =========================================================
-   Cab Sarathi — website styles (shared by every page)
-   Colours match the Android app.
-   ========================================================= */
 :root {
   --brand: #FFB703;
   --brand-dark: #E09A00;
@@ -54,7 +50,6 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 .skip-link:focus { left: 12px; }
 
-/* ---------- Buttons ---------- */
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
   height: 48px; padding: 0 22px; border-radius: 12px;
@@ -71,7 +66,6 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .btn-ghost:hover { border-color: var(--ink); }
 .btn-sm { height: 40px; padding: 0 16px; font-size: 14px; border-radius: 10px; }
 
-/* Google Play style badge */
 .store-badge {
   display: inline-flex; align-items: center; gap: 12px;
   height: 56px; padding: 0 20px 0 16px; border-radius: 12px;
@@ -82,7 +76,6 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .store-badge small { display: block; font-size: 11px; line-height: 1.2; opacity: .8; letter-spacing: .02em; }
 .store-badge strong { display: block; font-size: 18px; line-height: 1.2; font-weight: 600; }
 
-/* ---------- Header ---------- */
 .site-header {
   position: sticky; top: 0; z-index: 50;
   background: rgba(255, 255, 255, .92);
@@ -137,7 +130,6 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .nav .btn { margin: 8px 0 0; height: 48px; }
 }
 
-/* ---------- Sections ---------- */
 section { padding: 88px 0; }
 .section-muted { background: var(--bg); }
 .eyebrow {
@@ -154,7 +146,6 @@ section { padding: 88px 0; }
   .section-head { margin-bottom: 36px; }
 }
 
-/* ---------- Hero ---------- */
 .hero { padding: 56px 0 72px; overflow: hidden; background:
   radial-gradient(900px 420px at 85% 10%, var(--brand-soft), transparent 70%),
   linear-gradient(var(--surface), var(--surface)); }
@@ -167,7 +158,6 @@ section { padding: 88px 0; }
 .hero-points li { display: inline-flex; align-items: center; gap: 8px; }
 .hero-points svg { width: 18px; height: 18px; color: var(--success); }
 
-/* Phone mockup (pure CSS, no images) */
 .phone-wrap { position: relative; display: flex; justify-content: center; }
 .phone {
   width: 300px; max-width: 100%; aspect-ratio: 9 / 18.5; border-radius: 40px; padding: 12px;
@@ -221,7 +211,6 @@ section { padding: 88px 0; }
   .hero-actions .btn, .hero-actions .store-badge { width: 100%; justify-content: center; }
 }
 
-/* ---------- Stats strip ---------- */
 .stats { padding: 0; }
 .stats-grid {
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
@@ -233,7 +222,6 @@ section { padding: 88px 0; }
 .stat span { font-size: 14px; color: var(--muted); }
 @media (max-width: 760px) { .stats-grid { grid-template-columns: repeat(2, 1fr); transform: translateY(-24px); } }
 
-/* ---------- How it works (app screenshots + highlight) ---------- */
 .tabs { display: inline-flex; padding: 5px; border-radius: 14px; background: var(--surface); border: 1px solid var(--border); margin: 0 auto 44px; }
 .tabs-wrap { text-align: center; }
 .tab {
@@ -295,7 +283,6 @@ section { padding: 88px 0; }
   .hiw-hl::after { animation: none; }
 }
 
-/* ---------- Feature cards ---------- */
 .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .feature { padding: 28px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--surface); transition: box-shadow .2s, transform .2s; }
 .feature:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
@@ -306,7 +293,6 @@ section { padding: 88px 0; }
 @media (max-width: 960px) { .features { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 600px) { .features { grid-template-columns: 1fr; } .feature { padding: 22px; } }
 
-/* ---------- Split (drivers / safety) ---------- */
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
 .split h2 { margin-top: 14px; font-size: clamp(28px, 4vw, 38px); font-weight: 700; }
 .split .lead { margin-top: 14px; color: var(--muted); font-size: 17px; }
@@ -339,7 +325,6 @@ section { padding: 88px 0; }
   .split.reverse .split-media { order: 2; }
 }
 
-/* ---------- FAQ ---------- */
 .faq { max-width: 780px; margin: 0 auto; display: grid; gap: 12px; }
 .faq details { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 0 20px; }
 .faq summary {
@@ -351,7 +336,6 @@ section { padding: 88px 0; }
 .faq details[open] summary::after { transform: rotate(45deg); }
 .faq details p { padding: 0 0 18px; color: var(--muted); font-size: 15px; }
 
-/* ---------- CTA ---------- */
 .cta { padding: 0 0 88px; }
 .cta-box {
   border-radius: var(--radius-lg); padding: 56px 40px; text-align: center;
@@ -362,7 +346,6 @@ section { padding: 88px 0; }
 .cta-box .store-badge { margin-top: 28px; }
 @media (max-width: 600px) { .cta { padding-bottom: 64px; } .cta-box { padding: 40px 22px; } }
 
-/* ---------- Footer ---------- */
 .site-footer { background: var(--ink); color: rgba(255,255,255,.72); padding: 64px 0 28px; font-size: 15px; }
 .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 40px; }
 .site-footer .brand-logo { height: 28px; }
@@ -391,14 +374,10 @@ section { padding: 88px 0; }
   *, *::before, *::after { transition: none !important; }
 }
 
-/* Phone mockup: keep driver rows on one line on small phones */
 .s-driver > div:not(.s-fare) { min-width: 0; }
 .s-name, .s-sub { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .s-fare { white-space: nowrap; }
 
-/* =========================================================
-   Inner pages (About, Contact, Privacy, Terms)
-   ========================================================= */
 .page-hero {
   padding: 64px 0 56px; text-align: center;
   background: radial-gradient(700px 300px at 50% 0%, var(--brand-soft), transparent 75%), var(--surface);
@@ -409,10 +388,8 @@ section { padding: 88px 0; }
 .page-hero .updated { margin-top: 12px; font-size: 14px; color: var(--muted-2); }
 @media (max-width: 640px) { .page-hero { padding: 44px 0 40px; } }
 
-/* Placeholder the owner must fill in — clearly visible until replaced */
 .todo { background: #FFE58A; color: var(--ink); padding: 0 4px; border-radius: 4px; font-weight: 600; }
 
-/* ---------- Legal pages ---------- */
 .legal { padding: 56px 0 88px; }
 .legal-grid { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 56px; align-items: start; }
 .legal-grid > * { min-width: 0; }
@@ -461,7 +438,6 @@ section { padding: 88px 0; }
   .prose h2 { font-size: 20px; margin-top: 36px; }
 }
 
-/* ---------- About ---------- */
 .about-intro { display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: center; }
 .about-intro h2 { margin-top: 14px; font-size: clamp(26px, 3.6vw, 36px); font-weight: 700; }
 .about-intro p { margin-top: 16px; color: var(--muted); font-size: 16.5px; }
@@ -470,12 +446,10 @@ section { padding: 88px 0; }
 .quote-card blockquote { margin: 0; font-size: clamp(19px, 2.2vw, 23px); line-height: 1.5; font-weight: 500; position: relative; z-index: 1; }
 .quote-card blockquote::before { content: "“"; display: block; font-size: 64px; line-height: .6; color: var(--brand); margin-bottom: 14px; }
 .quote-card cite { display: block; margin-top: 18px; font-style: normal; font-size: 14px; opacity: .7; position: relative; z-index: 1; }
-.name-meaning { margin-top: 22px; display: flex; gap: 14px; align-items: flex-start; padding: 16px; border-radius: 14px; background: var(--brand-soft); }
-.name-meaning .ic { width: 40px; height: 40px; border-radius: 12px; background: var(--brand); display: grid; place-items: center; flex: none; font-weight: 700; }
-.name-meaning p { margin: 0; color: var(--ink-2); font-size: 15px; }
 .values { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .value { padding: 24px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--border); }
-.value .emoji { font-size: 28px; }
+.value .ic { width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; background: var(--brand-soft); color: var(--brand-text); }
+.value .ic svg { width: 24px; height: 24px; }
 .value h3 { margin-top: 14px; font-size: 17px; font-weight: 600; }
 .value p { margin-top: 8px; color: var(--muted); font-size: 14.5px; }
 .model { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -489,7 +463,6 @@ section { padding: 88px 0; }
 @media (max-width: 960px) { .values { grid-template-columns: repeat(2, 1fr); } .model { grid-template-columns: 1fr; } .about-intro { grid-template-columns: 1fr; gap: 36px; } }
 @media (max-width: 520px) { .values { grid-template-columns: 1fr; } }
 
-/* ---------- Contact ---------- */
 .contact-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 40px; align-items: start; }
 .contact-list { display: grid; gap: 14px; }
 .contact-item { display: flex; gap: 14px; padding: 20px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--surface); }
@@ -518,7 +491,6 @@ section { padding: 88px 0; }
 @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } }
 @media (max-width: 560px) { .form-grid { grid-template-columns: 1fr; } .form-card { padding: 22px; } .form-foot .btn { width: 100%; } }
 
-/* ---------- 404 ---------- */
 .notfound { padding: 96px 0; text-align: center; }
 .notfound .code { font-size: clamp(72px, 14vw, 120px); font-weight: 700; color: var(--brand); line-height: 1; }
 .notfound h1 { margin-top: 12px; font-size: clamp(24px, 4vw, 32px); }

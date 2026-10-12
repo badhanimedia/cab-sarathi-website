@@ -1,6 +1,4 @@
-// Cab Sarathi website — shared behaviour for every page (no libraries)
 (function () {
-  // ---- Mobile menu ----
   var toggle = document.querySelector('.menu-toggle');
   var nav = document.getElementById('site-nav');
   if (toggle && nav) {
@@ -15,7 +13,6 @@
     window.addEventListener('resize', function () { if (window.innerWidth > 860) setOpen(false); });
   }
 
-  // ---- Header shadow after scrolling ----
   var header = document.querySelector('.site-header');
   if (header) {
     var onScroll = function () { header.classList.toggle('is-scrolled', window.scrollY > 8); };
@@ -23,7 +20,6 @@
     onScroll();
   }
 
-  // ---- How it works: riders / drivers tabs + steps that move the highlight on the app screenshot ----
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var panels = document.querySelectorAll('.hiw');
   var timers = [];
@@ -52,13 +48,11 @@
 
   panels.forEach(function (panel, i) {
     var steps = Array.prototype.slice.call(panel.querySelectorAll('.hiw-step'));
-    // Preload the other screens so switching is instant
     steps.forEach(function (b) { var im = new Image(); im.src = b.dataset.shot; });
     var stopAuto = function () { clearInterval(timers[i]); timers[i] = null; };
     steps.forEach(function (b) {
       b.addEventListener('click', function () { stopAuto(); showStep(panel, b); });
     });
-    // Auto-advance through the steps until the visitor picks one
     if (!reduceMotion) {
       timers[i] = setInterval(function () {
         if (panel.hidden) return;
@@ -80,11 +74,9 @@
     });
   });
 
-  // ---- Footer year ----
   var year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
 
-  // ---- Contact form: opens the visitor's email app with everything filled in ----
   var form = document.getElementById('contact-form');
   if (form) {
     form.addEventListener('submit', function (e) {
