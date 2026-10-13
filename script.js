@@ -79,18 +79,54 @@
 
   var form = document.getElementById('contact-form');
   if (form) {
+    var status = document.getElementById('cf-status');
+    var submit = form.querySelector('button[type="submit"]');
+    var show = function (text, ok) {
+      status.textContent = text;
+      status.hidden = false;
+      status.classList.toggle('is-ok', ok);
+      status.classList.toggle('is-error', !ok);
+    };
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       if (!form.reportValidity()) return;
       var d = new FormData(form);
-      var subject = '[' + d.get('topic') + '] ' + d.get('name');
-      var body =
-        'Name: ' + d.get('name') + '\n' +
-        'Phone: ' + (d.get('phone') || '-') + '\n' +
-        'I am a: ' + d.get('role') + '\n\n' +
-        d.get('message');
-      window.location.href = 'mailto:' + form.dataset.to +
-        '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      var phone = String(d.get('phone') || '').trim();
+      var email = String(d.get('email') || '').trim();
+      if (!phone && !email) {
+        show('Please give a mobile number or an email so we can reply.', false);
+        form.querySelector('#cf-phone').focus();
+        return;
+      }
+      var body = {
+        name: d.get('name'), phone: phone, email: email, role: d.get('role'),
+        topic: d.get('topic'), message: d.get('message'), website: d.get('website')
+      };
+      submit.disabled = true;
+      submit.textContent = 'Sending…';
+      fetch(form.dataset.api, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept-Language': 'en' },
+        body: JSON.stringify(body)
+      })
+        .then(function (res) {
+          return res.json().catch(function () { return {}; }).then(function (json) { return { ok: res.ok, json: json }; });
+        })
+        .then(function (r) {
+          if (r.ok) {
+            form.reset();
+            show('Thank you. We got your message and will get back to you soon.', true);
+          } else {
+            show(r.json.message || 'Something went wrong. Please try again.', false);
+          }
+        })
+        .catch(function () {
+          show('Could not send right now. Please check your internet or email support@cabsarathi.in.', false);
+        })
+        .then(function () {
+          submit.disabled = false;
+          submit.textContent = 'Send message';
+        });
     });
   }
 })();

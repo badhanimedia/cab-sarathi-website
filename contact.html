@@ -91,17 +91,21 @@
           </div>
         </div>
 
-        <form class="form-card" id="contact-form" data-to="support@cabsarathi.in" novalidate>
+        <form class="form-card" id="contact-form" data-api="https://api.cabsarathi.in/api/contact" novalidate>
           <h2>Send us a message</h2>
-          <p>This opens your email app with the message ready to send.</p>
+          <p>Our team usually replies within one working day.</p>
           <div class="form-grid">
             <div class="field">
               <label for="cf-name">Your name</label>
               <input id="cf-name" name="name" type="text" autocomplete="name" required maxlength="80">
             </div>
             <div class="field">
-              <label for="cf-phone">Mobile number <span style="color:var(--muted-2);font-weight:400">(optional)</span></label>
+              <label for="cf-phone">Mobile number</label>
               <input id="cf-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="15" pattern="[0-9+ ]{10,15}">
+            </div>
+            <div class="field">
+              <label for="cf-email">Email <span style="color:var(--muted-2);font-weight:400">(optional)</span></label>
+              <input id="cf-email" name="email" type="email" autocomplete="email" maxlength="150">
             </div>
             <div class="field">
               <label for="cf-role">I am a</label>
@@ -112,7 +116,7 @@
                 <option>Other</option>
               </select>
             </div>
-            <div class="field">
+            <div class="field full">
               <label for="cf-topic">Topic</label>
               <select id="cf-topic" name="topic">
                 <option>General question</option>
@@ -128,7 +132,13 @@
               <label for="cf-message">Message</label>
               <textarea id="cf-message" name="message" required minlength="10" maxlength="2000" placeholder="Tell us how we can help…"></textarea>
             </div>
+            <div class="hp" aria-hidden="true">
+              <label for="cf-website">Website</label>
+              <input id="cf-website" name="website" type="text" tabindex="-1" autocomplete="off">
+            </div>
           </div>
+          <p class="form-hint">Give a mobile number or an email so we can reply.</p>
+          <p class="form-status" id="cf-status" role="status" aria-live="polite" hidden></p>
           <div class="form-foot">
             <small>Please don't share OTPs or passwords. For ride issues, include the Ride ID shown on the ride page.</small>
             <button class="btn btn-primary" type="submit">Send message</button>

@@ -489,6 +489,12 @@ section { padding: 88px 0; }
 .form-foot { margin-top: 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 .form-foot small { color: var(--muted); font-size: 13px; max-width: 320px; }
 @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } }
+.hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.form-hint { margin-top: 12px; color: var(--muted); font-size: 13px; }
+.form-status { margin-top: 16px; padding: 12px 14px; border-radius: 12px; font-size: 14px; font-weight: 600; }
+.form-status.is-ok { background: #e8f7ee; color: #146c3a; }
+.form-status.is-error { background: #fdecec; color: #b42318; }
+.btn:disabled { opacity: .6; cursor: progress; }
 @media (max-width: 560px) { .form-grid { grid-template-columns: 1fr; } .form-card { padding: 22px; } .form-foot .btn { width: 100%; } }
 
 .notfound { padding: 96px 0; text-align: center; }
